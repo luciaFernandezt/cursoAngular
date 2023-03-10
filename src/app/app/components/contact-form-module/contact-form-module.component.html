@@ -1,0 +1,45 @@
+<div class="containerContacto">
+    <form [formGroup]="form" fxLayout="column">
+        <h5>Contacto</h5>
+
+        <div>
+            <label>Nombre</label>
+            <input  type="text" formControlName="nombre">     
+        </div>
+
+        <div>
+            <label>Correo Electrónico</label>
+            <input  type="text" formControlName="correo">           
+        </div>
+
+        <div>
+            <label>Teléfono</label>
+            <p>Ejemplo:  {{ 4772225558 | number }}</p>    
+            <input  type="text" formControlName="telefono">          
+        </div>
+
+        <div>
+            <label>Mensaje</label>
+            <textarea  type="text" formControlName="mensaje" cols="30" rows="2"></textarea>           
+        </div>
+
+        <button (click)="enviar()">Enviar</button>
+    </form>
+
+    <ng-container
+    *ngIf= "form.controls['nombre'].value==''">
+    <p class="text-danger">Nombre Vacio</p>
+  </ng-container>
+
+  <ng-container
+  *ngIf= "form.controls['correo'].value==''">
+  <p class="text-danger">correo Vacio</p>
+</ng-container>
+
+
+
+
+
+
+
+</div>
